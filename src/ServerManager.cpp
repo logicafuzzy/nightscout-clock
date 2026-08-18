@@ -343,6 +343,8 @@ void ServerManager_::setupWebServer(IPAddress ip) {
         } else {
             jsonResponse += "0";
         }
+        jsonResponse += ", \"battery\": ";
+        jsonResponse += String(BATTERY_PERCENT);
         jsonResponse += "}";
         request->send(200, "application/json", jsonResponse);
     });

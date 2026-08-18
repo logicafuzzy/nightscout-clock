@@ -1086,7 +1086,7 @@
         const internetBadge = $('#status_internet_badge');
         const dataSourceStatusBadge = $('#status_data_source_badge');
         const lastReadingBadge = $('#status_last_reading_badge');
-
+        const batteryStatus = $('#status_battery');
 
 
         setInterval(() => {
@@ -1133,6 +1133,8 @@
                             lastReadingBadge.text(`${data.sgv} mg/dl `);
                         }
                     }
+
+                    batteryStatus.text(`${data.battery}%`);
 
                     clockStatus = data;
                 })
